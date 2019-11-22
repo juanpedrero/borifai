@@ -1,0 +1,55 @@
+// Global
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+}
+
+body {
+  display: grid;
+  grid-template-columns: rem(220px) 1fr;
+  grid-template-rows: 1fr rem(62px);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  grid-area: 1 / 1 / 3 / 2;
+  background-image: linear-gradient($navbar1, $navbar2);
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  grid-area: 1 / 2 / 3 / 3;
+  width: 100%;
+  height: 100%;
+}
+
+.player {
+  grid-area: 2 / 1 / 3 / 3;
+  background: $player;
+  opacity: 0.9;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}

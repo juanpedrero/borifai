@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+// Partials
+@import "scss/partials/reset";
+@import "scss/partials/rem";
+@import "scss/partials/variables";
+@import "scss/partials/mixins";
+@import "scss/partials/global";
+
+// Header
