@@ -1,0 +1,29 @@
+@import "../../../../scss/partials/rem";
+@import "../../../../scss/partials/variables";
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  margin: rem(30px 35px);
+
+  &__heading {
+    margin-bottom: rem(22px);
+    font-size: rem(13px);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $white;
+  }
+
+  &__item {
+    font-size: rem(14px);
+    color: $sidebar-text;
+
+    & + & {
+      margin-top: 1rem;
+    }
+
+    &:nth-of-type(5) {
+      margin-top: rem(42px);
+    }
+  }
+}

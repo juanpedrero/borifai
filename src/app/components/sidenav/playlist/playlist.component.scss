@@ -1,0 +1,35 @@
+@import "../../../../scss/partials/rem";
+@import "../../../../scss/partials/variables";
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+  margin: rem(51px 35px);
+
+  &__heading {
+    margin-bottom: rem(22px);
+    font-size: rem(13px);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $white;
+  }
+
+  &__item {
+    & + & {
+      margin-top: rem(14px);
+    }
+  }
+
+  &__bullet {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: $playlist-bullet;
+  }
+
+  &__btn {
+    font-size: rem(14px);
+    color: $sidebar-text;
+  }
+}

@@ -1,0 +1,33 @@
+@import "../../../scss/partials/rem";
+@import "../../../scss/partials/variables";
+
+// Artist
+
+.artist {
+  display: flex;
+  justify-content: space-between;
+  margin: rem(6px 32px 0 78px);
+
+  &__btn {
+    margin-top: rem(104px);
+    height: rem(34px);
+    border: 1px solid $white;
+    border-radius: rem(17px);
+    padding: rem(0 30px);
+    font-size: rem(14px);
+  }
+
+
+  &__name {
+    font-size: rem(90px);
+    font-weight: 700;
+  }
+
+  &__tab {
+    font-size: rem(14px);
+
+    & + & {
+      margin-left: rem(45px);
+    }
+  }
+}

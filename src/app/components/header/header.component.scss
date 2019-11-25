@@ -1,0 +1,9 @@
+@import "../../../scss/partials/rem";
+
+// Header
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  padding: rem(17px 30px 0);
+  height: rem(51px);
+}

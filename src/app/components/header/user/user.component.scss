@@ -1,0 +1,17 @@
+@import "../../../../scss/partials/rem";
+@import "../../../../scss/partials/variables";
+
+// User
+.user {
+  display: flex;
+
+  &__name {
+    align-self: center;
+    font-family: 'Arial', sans-serif;
+    flex: rem(14px);
+  }
+
+  &__avatar {
+    margin-left: rem(13px);
+  }
+}
