@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { MusicService } from 'src/app/services/music.service';
+
 
 @Component({
   selector: 'app-album-card',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./album-card.component.scss']
 })
 export class AlbumCardComponent implements OnInit {
+  
+  @Input() albumes: any
+  // FALTA CREAR MODELO DE ALBUMES
 
-  constructor() { }
+  constructor(private musicService: MusicService) { }
 
   ngOnInit() {
   }

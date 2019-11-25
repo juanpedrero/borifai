@@ -1,0 +1,21 @@
+@import "../../../../scss/partials/rem";
+
+.album {
+    margin-right: 20px;
+    &__img {
+        height: rem(170px);
+        width: rem(170px);
+    }
+    &__name {
+        margin-top: rem(8px);
+        font-size: rem(14px);
+        line-height: rem(18px);
+    }
+    &__year {
+        font-size: rem(14px);
+        line-height: rem(18px);
+        opacity: 0.6;
+        margin-top: rem(4px);
+        margin-bottom: rem(20px);
+    }
+}

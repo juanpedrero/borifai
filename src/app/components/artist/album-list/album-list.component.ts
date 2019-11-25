@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MusicService } from 'src/app/services/music.service';
+// import { Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-album-list',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./album-list.component.scss']
 })
 export class AlbumListComponent implements OnInit {
+  
+  public albumList: object;
 
-  constructor() { }
+  constructor(public musicService: MusicService) { }
 
   ngOnInit() {
   }
 
 }
+    
+  
