@@ -48,8 +48,9 @@ a {
 .main-container {
   grid-area: 1 / 2 / 3 / 3;
   height: 100%;
-  background-image: url("/assets/images/wallpaper_Queen.jpeg");
-  background-size: cover;
+  background-color: pink;
+  //background-image: url("/assets/images/wallpaper_Warhola.jpg");
+  //background-size: cover;
 }
 
 .player {
