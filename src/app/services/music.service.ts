@@ -203,7 +203,11 @@ export class MusicService {
     return myAlbum.image;
   }
 
-
+// 
+getAlbumList(artista) {
+  const idArtist = artista.id
+  filter
+}
 
 
   // --- Funcion para desplegar songlist ---

@@ -14,6 +14,7 @@ export class AlbumListComponent implements OnInit {
   constructor(public musicService: MusicService) { }
 
   ngOnInit() {
+    this.albumList = this.musicService.getAlbumImgById()
   }
 
 }
