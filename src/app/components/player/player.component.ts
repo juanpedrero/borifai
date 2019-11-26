@@ -18,8 +18,11 @@ export class PlayerComponent implements OnInit {
   private btnShuffle: HTMLElement;
   private btnRepeat: HTMLElement;
   private btnVolume: HTMLElement;
+  private formerVolume: number;
   private imgVolume: HTMLMediaElement;
   private volumeBar: HTMLElement;
+  private timeBar: HTMLElement;
+
 
   constructor() {
 
@@ -35,9 +38,12 @@ export class PlayerComponent implements OnInit {
     this.btnShuffle = document.getElementById('controlShuffle');
     this.btnRepeat = document.getElementById('controlRepeat');
     this.btnVolume = document.getElementById('controlVolume');
+    this.formerVolume = 1;
     this.imgVolume = document.querySelector('#imgVolume');
     this.volumeBar = document.getElementById('volumeBar');
     this.volumeBar.style.width = this.audioToPlay.volume * 100 + '%';
+    this.timeBar = document.getElementById('timeBar');
+    this.timeBar.style.width = '0';
   }
 
   controlPlay(): void {
@@ -56,20 +62,26 @@ export class PlayerComponent implements OnInit {
   }
 
   switchVolume():void {
-    if (this.btnVolume.dataset.playing === 'false') {
+    if (this.btnVolume.dataset.sound === 'false') {
+      this.formerVolume = this.audioToPlay.volume;
       this.audioToPlay.volume = 0;
       this.imgVolume.src = '../../../assets/svg/volume-mute-solid.svg';
-      this.btnVolume.dataset.playing = 'true';
+      this.btnVolume.dataset.sound = 'true';
     } else {
-      this.audioToPlay.volume = 1;
+      this.audioToPlay.volume = this.formerVolume;
       this.imgVolume.src = '../../../assets/svg/volume-up-solid.svg';
-      this.btnVolume.dataset.playing = 'false';
+      this.btnVolume.dataset.sound = 'false';
     }
     this.volumeBar.style.width = this.audioToPlay.volume * 100 + '%';
   }
 
-  controlVolume($event):void {
+  setVolume($event):void {
     this.audioToPlay.volume = parseFloat($event.target.value);
-    this.volumeBar.style.width = this.audioToPlay.volume * 100 + '%';
+    this.volumeBar.style.width = parseFloat($event.target.value) * 100 + '%';
+  }
+
+  setTime($event):void {
+    this.audioToPlay.currentTime = parseFloat($event.target.value);
+    this.timeBar.style.width = parseFloat($event.target.value) + '%';
   }
 }

@@ -58,7 +58,7 @@
     }
   }
 
-  &__length-group {
+  &__time-group {
     display: flex;
     align-items: center;
     margin-right: rem(25px);
@@ -98,7 +98,6 @@
     }
 
     &--fill {
-
       background-color: $white;
     }
 

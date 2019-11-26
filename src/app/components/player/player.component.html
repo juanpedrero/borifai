@@ -8,7 +8,7 @@
   </div>
   <div class="controls">
     <audio>
-      <source src="../../../assets/music/queen/Queen - Don't Stop Me Now (Official Video).mp3" type="audio/mp3"
+      <source src="../../../assets/music/queen/Queen - Somebody To Love (Official Video).mp3" type="audio/mp3"
         preload="auto">
       Your browser does not support the audio!
     </audio>
@@ -26,21 +26,23 @@
           alt="Repeat"></button>
     </div>
     <div class="controls__volume-group">
-      <button id="controlVolume" class="controls__btn" data-playing="false" role="switch" aria-checked="false"
+      <button id="controlVolume" class="controls__btn" data-sound="false" role="switch" aria-checked="false"
         (click)="switchVolume()"><img src="../../../assets/svg/volume-up-solid.svg" id="imgVolume"
           alt="volume"></button>
       <div class="controls__progress controls__progress--guide">
         <div id="volumeBar" class="controls__progress controls__progress--fill"></div>
         <input type="range" id="volumeBarHidden" class="controls__progress controls__progress--hidden" min="0" max="1"
-          value="1" step="0.01" (input)="controlVolume($event)">
+          value="1" step="0.01" (input)="setVolume($event)">
       </div>
     </div>
-    <div class="controls__length-group">
-      <span class="controls__actual-length">0:30</span>
-      <div class="controls__progress controls__progress--lg">
-        <div class="controls__progress controls__progress--fill"></div>
+    <div class="controls__time-group">
+      <span class="controls__actual-time">0:00</span>
+      <div class="controls__progress controls__progress--lg controls__progress--guide">
+        <div id="timeBar" class="controls__progress controls__progress--fill"></div>
+        <input type="range" id="timeBarHidden" class="controls__progress controls__progress--lg controls__progress--hidden" min="0" max="100"
+          value="0" step="1" (change)="setTime($event)">
       </div>
-      <span class="controls__total-length">3:50</span>
+      <span class="controls__total-time">3:50</span>
     </div>
     <button id="toggleList" class="controls__btn"><img src="../../../assets/svg/queue-show.svg" alt="queue"></button>
   </div>
