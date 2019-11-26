@@ -93,9 +93,20 @@
       width: rem(630px);
     }
 
+    &--guide {
+      position: relative;
+    }
+
     &--fill {
-      width: 25%;
+
       background-color: $white;
+    }
+
+    &--hidden {
+      position: absolute;
+      opacity: 0;
+      top: -2px;
+      left: -10px;
     }
   }
 }
