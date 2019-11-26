@@ -9,7 +9,7 @@ import { MusicService } from 'src/app/services/music.service';
 })
 export class AlbumListComponent implements OnInit {
   
-  public albumList: object;
+  public albumList: any[];
 
   constructor(public musicService: MusicService) { }
 
