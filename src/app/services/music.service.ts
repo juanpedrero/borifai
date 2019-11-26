@@ -8,6 +8,7 @@ import { Injectable } from '@angular/core';
 export class MusicService {
 
   constructor() { }
+  
   public artists = [
     {
       id: 1,

@@ -11,11 +11,13 @@ export class AlbumListComponent implements OnInit {
   
   public albumList: any[];
 
-  constructor(public musicService: MusicService) { }
+  constructor(public musicService: MusicService) {
+    this.albumList = musicService.albums
+   }
 
   ngOnInit() {
-    this.albumList = this.musicService.getAlbumImgById()
-  }
+/*     this.albumList = this.musicService.getAlbumImgById()
+ */  }
 
 }
     
