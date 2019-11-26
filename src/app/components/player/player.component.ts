@@ -12,4 +12,10 @@ export class PlayerComponent implements OnInit {
   ngOnInit() {
   }
 
+  controlPlay() {
+    const playBtn = document.getElementById('songToPlay');
+    playBtn.play();
+  }
+
+
 }

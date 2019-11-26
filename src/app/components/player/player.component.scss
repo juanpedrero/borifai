@@ -1,0 +1,101 @@
+@import "../../../scss/partials/rem";
+@import "../../../scss/partials/variables";
+
+// Player
+.player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: rem(9px 22px 12px 13px);
+}
+
+.song-info {
+  display: flex;
+  align-items: center;
+
+  &__media {
+    width: rem(40px);
+    height: rem(40px);
+    border: 1px solid $white;
+  }
+
+  &__text-group {
+    margin-left: 1rem;
+  }
+
+  &__name {
+    font-size: rem(13px);
+    font-weight: 600;
+  }
+
+  &__author {
+    margin-top: 0.5rem;
+    font-size: rem(12px);
+  }
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  font-size: rem(12px);
+
+  &__group {
+    margin-right: rem(44px);
+
+    * + * {
+      margin-left: rem(21px);
+    }
+  }
+
+  &__volume-group {
+    display: flex;
+    align-items: center;
+    margin-right: rem(35px);
+
+    * + * {
+      margin-left: rem(10px);
+    }
+  }
+
+  &__length-group {
+    display: flex;
+    align-items: center;
+    margin-right: rem(25px);
+
+    * + * {
+      margin-left: rem(16px);
+    }
+  }
+
+  &__btn {
+    width: rem(30px);
+    height: rem(30px);
+    border-radius: 50%;
+
+    img {
+      height: 12px;
+    }
+  }
+
+  &__btn--rounded {
+    border: 1px solid $white;
+    border-radius: 50%;
+  }
+
+  &__progress {
+    width: rem(105px);
+    height: 3px;
+    border-radius: 1px;
+    background-color: rgba(255, 255, 255, 0.35);
+
+    &--lg {
+      width: rem(630px);
+    }
+
+    &--fill {
+      width: 25%;
+      background-color: $white;
+    }
+  }
+}
