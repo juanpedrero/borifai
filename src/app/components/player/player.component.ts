@@ -18,11 +18,15 @@ export class PlayerComponent implements OnInit {
   private btnShuffle: HTMLElement;
   private btnRepeat: HTMLElement;
   private btnVolume: HTMLElement;
+
+  // Volume
   private formerVolume: number;
   private imgVolume: HTMLMediaElement;
   private volumeBar: HTMLElement;
-  private timeBar: HTMLElement;
 
+  // Duration
+  private timeBar: HTMLElement;
+  private totalTime: number;
 
   constructor() {
 
@@ -44,9 +48,11 @@ export class PlayerComponent implements OnInit {
     this.volumeBar.style.width = this.audioToPlay.volume * 100 + '%';
     this.timeBar = document.getElementById('timeBar');
     this.timeBar.style.width = '0';
+    this.totalTime = 0;
   }
 
   controlPlay(): void {
+    this.totalTime = this.audioToPlay.duration;
     if (this.audioContext.state === 'suspended') {
       this.audioContext.resume();
     }
@@ -81,7 +87,7 @@ export class PlayerComponent implements OnInit {
   }
 
   setTime($event):void {
-    this.audioToPlay.currentTime = parseFloat($event.target.value);
+    this.audioToPlay.currentTime = parseFloat($event.target.value) * Math.floor(this.audioToPlay.duration / 100);
     this.timeBar.style.width = parseFloat($event.target.value) + '%';
   }
 }
