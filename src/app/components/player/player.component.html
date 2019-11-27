@@ -8,19 +8,19 @@
   </div>
   <div class="controls">
     <audio>
-      <source src="../../../assets/music/queen/Queen - Somebody To Love (Official Video).mp3" type="audio/mp3"
+      <source src="../../../assets/music/queen/BohemianRhapsody.mp3" type="audio/mp3"
         preload="auto">
       Your browser does not support the audio!
     </audio>
     <div class="controls__group">
       <button type="button" id="controlShuffle" class="controls__btn"><img src="../../../assets/svg/random-solid.svg"
           alt="Shuffle"></button>
-      <button type="button" id="controlPrevious" class="controls__btn"><img
+      <button type="button" id="controlPrevious" class="controls__btn" (click)="controlPrevious()"><img
           src="../../../assets/svg/step-backward-solid.svg" alt="Previous song"></button>
       <button type="button" id="controlPlay" class="controls__btn controls__btn--rounded" data-playing="false"
         role="switch" aria-checked="false" (click)="controlPlay()"><img src="../../../assets/svg/play-solid.svg"
           id="imgPlayPause" alt="Play song"></button>
-      <button type="button" id="controlNext" class="controls__btn"><img src="../../../assets/svg/step-forward-solid.svg"
+      <button type="button" id="controlNext" class="controls__btn" (click)="controlNext()"><img src="../../../assets/svg/step-forward-solid.svg"
           alt="Next song"></button>
       <button type="button" id="controlRepeat" class="controls__btn"><img src="../../../assets/svg/sync-alt-solid.svg"
           alt="Repeat"></button>
