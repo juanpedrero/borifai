@@ -16,6 +16,8 @@ import { SongListComponent } from './components/artist/song-list/song-list.compo
 import { SongTimePipe } from './components/player/pipes/song-time.pipe';
 import { AlbumCardComponent } from './components/artist/album-card/album-card.component';
 import { ModalPlaylistComponent } from './components/sidenav/playlist/modal-playlist/modal-playlist.component';
+import { AboutComponent } from './components/artist/about/about.component';
+import { AboutCardComponent } from './components/artist/about/about-card/about-card.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ModalPlaylistComponent } from './components/sidenav/playlist/modal-play
     SongListComponent,
     SongTimePipe,
     AlbumCardComponent,
-    ModalPlaylistComponent
+    ModalPlaylistComponent,
+    AboutComponent,
+    AboutCardComponent
   ],
   imports: [
     BrowserModule,
