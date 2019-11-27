@@ -12,17 +12,16 @@ export class MusicService {
   public artists = [
     {
       id: 1,
-      name: 'Queen',
-      info: 'Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.',
-      img: '/assets/images/wallpaper_Queen.jpeg',
+      name: "Queen",
+      info: "Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.",
+      img: "/assets/images/wallpaper_Queen.jpeg",
     },
     {
       id: 2,
-      name: 'Warhola',
-      info: 'Blending dramatic indie electronica and woozy alt-R&B, Warhola is the solo project of Belgian musician Oliver Symons (Bazart, Noble Tea). A native of Sint-Job-in-t-Goor in the province of Antwerp, Symons first found the national spotlight at the age of 15 as a competitor for the Belgian entry in the 2008 Junior Eurovision Song Contest. He won and presented his song "Shut Up" to an international audience that November. Less than two years after his 11th-place finish, he founded the indie rock band Noble Tea with guitarist Emiel Van Den Abbeele, guitarist/keyboard player Daan Schepers, bass player Moreno Claes, and drummer Antony Foscez. They released the Solitary Motions EP in 2012.',
-      img: '/assets/images/wallpaper_Queen.jpeg',
+      name: "Warhola",
+      info: "Blending dramatic indie electronica and woozy alt-R&B, Warhola is the solo project of Belgian musician Oliver Symons (Bazart, Noble Tea). A native of Sint-Job-in-t-Goor in the province of Antwerp, Symons first found the national spotlight at the age of 15 as a competitor for the Belgian entry in the 2008 Junior Eurovision Song Contest. He won and presented his song 'Shut Up' to an international audience that November. Less than two years after his 11th-place finish, he founded the indie rock band Noble Tea with guitarist Emiel Van Den Abbeele, guitarist/keyboard player Daan Schepers, bass player Moreno Claes, and drummer Antony Foscez. They released the Solitary Motions EP in 2012.",
+      img: "/assets/images/wallpaper_Queen.jpeg",
     },
-
   ];
 
   public albums = [
@@ -109,147 +108,92 @@ export class MusicService {
   public songs = [
     {
       id: 1,
-      name: 'Dont stop me now',
+      name: "Dont stop me now",
       albumId: 1,
       artistId: 1,
+      path: "../../../assets/music/queen/DontStopMeNow.mp3",
     },
     {
       id: 2,
-      name: 'I want to break free',
+      name: "I want to break free",
       albumId: 1,
       artistId: 1,
+      path: "../../../assets/music/queen/IWantToBreakFree.mp3",
     },
     {
       id: 3,
-      name: 'Killer Queen',
+      name: "Killer Queen",
       albumId: 1,
       artistId: 1,
+      path: "../../../assets/music/queen/KillerQueen.mp3",
     },
     {
       id: 4,
-      name: 'Somebody to love',
+      name: "Somebody to love",
       albumId: 1,
       artistId: 1,
+      path: "../../../assets/music/queen/SomebodyToLove.mp3",
     },
     {
       id: 5,
-      name: 'Bohemian Rhapsody',
+      name: "Bohemian Rhapsody",
       albumId: 1,
       artistId: 1,
+      path: "../../../assets/music/queen/BohemianRhapsody.mp3",
     },
     {
       id: 6,
-      name: 'Dont stop me now',
-      albumId: 2,
-      artistId: 1,
+      name: "Red",
+      albumId: 3,
+      artistId: 2,
+      path: "../../../assets/music/warhola/Red.mp3",
     },
     {
       id: 7,
-      name: 'I want to break free',
-      albumId: 2,
-      artistId: 1,
+      name: "Aura",
+      albumId: 3,
+      artistId: 2,
+      path: "../../../assets/music/warhola/Aura.mp3",
     },
     {
       id: 8,
-      name: 'Killer Queen',
-      albumId: 2,
-      artistId: 1,
+      name: "Glow",
+      albumId: 3,
+      artistId: 2,
+      path: "../../../assets/music/warhola/Jewels.mp3",
     },
     {
       id: 9,
-      name: 'Somebody to love',
-      albumId: 2,
-      artistId: 1,
+      name: "Lookt at me",
+      albumId: 3,
+      artistId: 2,
+      path: "../../../assets/music/warhola/LookAtMe.mp3",
     },
     {
       id: 10,
-      name: 'Bohemian Rhapsody',
-      albumId: 2,
-      artistId: 1,
+      name: "Promise",
+      albumId: 3,
+      artistId: 2,
+      path: "../../../assets/music/warhola/Promise.mp3",
     },
     {
       id: 11,
-      name: 'Red',
+      name: "Jewels",
       albumId: 3,
       artistId: 2,
+      path: "../../../assets/music/warhola/Jewels.mp3",
     },
-    {
-      id: 12,
-      name: 'Aura',
-      albumId: 3,
-      artistId: 2,
-    },
-    {
-      id: 13,
-      name: 'Glow',
-      albumId: 3,
-      artistId: 2,
-    },
-    {
-      id: 14,
-      name: 'Lookt at me',
-      albumId: 3,
-      artistId: 2,
-    },
-    {
-      id: 15,
-      name: 'Promise',
-      albumId: 3,
-      artistId: 2,
-    },
-    {
-      id: 16,
-      name: 'Jewels',
-      albumId: 3,
-      artistId: 2,
-    },
-    {
-      id: 17,
-      name: 'Red',
-      albumId: 4,
-      artistId: 2,
-    },
-    {
-      id: 18,
-      name: 'Aura',
-      albumId: 4,
-      artistId: 2,
-    },
-    {
-      id: 19,
-      name: 'Glow',
-      albumId: 4,
-      artistId: 2,
-    },
-    {
-      id: 20,
-      name: 'Lookt at me',
-      albumId: 4,
-      artistId: 2,
-    },
-    {
-      id: 21,
-      name: 'Promise',
-      albumId: 4,
-      artistId: 2,
-    },
-    {
-      id: 22,
-      name: 'Jewels',
-      albumId: 4,
-      artistId: 2,
-    }
   ];
 
   // -- Funcion para buscar el nombre del artista ---
-    getArtistNameById(id) {
+  getArtistNameById(id) {
     const myArtist = this.artists.find((artist) => {
       return artist.id === id
     })
     return myArtist.name;
   }
 
-// -- Funcion para buscar imagen del disco ---
+  // -- Funcion para buscar imagen del disco ---
   getAlbumImgById(id) {
     const myAlbum = this.albums.find((album) => {
       return album.id === id
@@ -257,16 +201,18 @@ export class MusicService {
     return myAlbum.image;
   }
 
-//
-getAlbumList(artista) {
-  const idArtist = artista.id
-  //filter
-}
+
+  getArtistList() {
+    return this.artists;
+  }
 
 
-  // --- Funcion para desplegar songlist ---
-  getSongList(){
+  getAlbumList() {
+    return this.albums;
+  }
 
+  getSongList() {
+    return this.songs
   }
 
 } // fin export class

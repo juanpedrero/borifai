@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MusicService } from 'src/app/services/music.service';
 
 @Component({
   selector: 'app-player',
@@ -34,13 +35,19 @@ export class PlayerComponent implements OnInit {
   private timeBar: HTMLElement;
   private totalTime: number;
 
-  //
+  // Playlist
   private audioPlaying: number;
   private playlist: Array<string>
 
-  constructor() {
 
-  }
+  constructor(
+    private musicService: MusicService,
+  ) { }
+
+  // Music
+  private artists: Array<Object>
+  private albums: Array<Object>
+  private songs: Array<Object>
 
   ngOnInit() {
     this.audioToPlay = document.querySelector('audio');
@@ -60,14 +67,6 @@ export class PlayerComponent implements OnInit {
     this.iconVolumeUp = '../../../assets/svg/volume-up-solid.svg';
     this.iconMute = '../../../assets/svg/volume-mute-solid.svg';
 
-    this.playlist = [
-      '../../../assets/music/queen/BohemianRhapsody.mp3',
-      '../../../assets/music/queen/DontStopMeNow.mp3',
-      '../../../assets/music/queen/IWantToBreakFree.mp3',
-      '../../../assets/music/queen/KillerQueen.mp3',
-      '../../../assets/music/queen/SomebodyToLove.mp3',
-    ];
-    //this.audioPlaying = this.playlist.indexOf(this.audioToPlay.src);
     this.audioPlaying = 0;
 
     this.formerVolume = 1;
@@ -75,11 +74,22 @@ export class PlayerComponent implements OnInit {
     this.volumeBar.style.width = this.audioToPlay.volume * 100 + '%';
     this.timeBar = document.getElementById('timeBar');
     this.timeBar.style.width = '0';
-    this.totalTime = 0;
+
+    this.artists = this.musicService.getArtistList();
+    this.albums = this.musicService.getAlbumList();
+    this.songs = this.musicService.getSongList();
+
+    this.playlist = [];
+    this.songs.forEach(song => {
+      this.playlist.push(song['path'])
+    });
+  }
+
+  loadData() {
+    this.totalTime = this.audioToPlay.duration;
   }
 
   controlPlay(): void {
-    this.totalTime = this.audioToPlay.duration;
     if (this.audioContext.state === 'suspended') {
       this.audioContext.resume();
     }
@@ -94,6 +104,7 @@ export class PlayerComponent implements OnInit {
       this.audioToPlay.onended = () => {
         this.imgPlayPause.src = this.iconPlay;
         this.btnPlay.dataset.playing = 'false';
+        this.controlNext();
       }
     } else {
       this.audioToPlay.pause();
@@ -102,19 +113,29 @@ export class PlayerComponent implements OnInit {
     }
   }
 
-  controlNext():void {
+  controlNext(): void {
     this.audioToPlay.pause();
     this.btnPlay.dataset.playing = 'false';
     this.audioPlaying++;
-    this.audioToPlay.src = this.playlist[this.audioPlaying];
+    if (this.audioPlaying === this.playlist.length) {
+      this.audioToPlay.src = this.playlist[0];
+      this.audioPlaying = 0;
+    } else {
+      this.audioToPlay.src = this.playlist[this.audioPlaying];
+    }
     this.controlPlay()
   }
 
-  controlPrevious():void {
+  controlPrevious(): void {
     this.audioToPlay.pause();
     this.btnPlay.dataset.playing = 'false';
     this.audioPlaying--;
-    this.audioToPlay.src = this.playlist[this.audioPlaying];
+    if (this.audioPlaying < 0) {
+      this.audioToPlay.src = this.playlist[(this.playlist.length) - 1];
+      this.audioPlaying = (this.playlist.length) - 1;
+    } else {
+      this.audioToPlay.src = this.playlist[this.audioPlaying];
+    }
     this.controlPlay()
   }
 
