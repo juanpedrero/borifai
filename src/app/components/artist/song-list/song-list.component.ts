@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MusicService } from 'src/app/services/music.service';
+
 
 @Component({
   selector: 'app-song-list',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SongListComponent implements OnInit {
 
-  constructor() { }
+  @Input() songs: any
+
+  constructor(public musicService: MusicService) { }
 
   ngOnInit() {
   }
