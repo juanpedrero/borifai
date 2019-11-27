@@ -3,9 +3,9 @@
     <button type="button" class="artist__btn">Save to My Stars</button>
     <h3 class="artist__name">Artist</h3>
     <div class="tab__menu">
-      <button type="button" routerLink='/albums' class="tab__menu-item">Albums</button>
-      <button type="button" routerLink='/about' class="tab__menu-item">About</button>
-      <button type="button" class="tab__menu-item">Related artists</button>
+      <button type="button" routerLink='/albums' routerLinkActive="tab__menu-item-activated" class="tab__menu-item">Albums</button>
+      <button type="button" routerLink='/about' routerLinkActive="tab__menu-item-activated" class="tab__menu-item">About</button>
+      <button type="button" routerLink='/related-artists' routerLinkActive="tab__menu-item-activated" class="tab__menu-item">Related artists</button>
     </div>
     <router-outlet></router-outlet>
     <!-- <app-album-list (changeAlbum)="changeAlbumSelected($event)"></app-album-list> -->

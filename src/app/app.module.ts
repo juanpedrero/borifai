@@ -18,6 +18,7 @@ import { AlbumCardComponent } from './components/artist/album-card/album-card.co
 import { ModalPlaylistComponent } from './components/sidenav/playlist/modal-playlist/modal-playlist.component';
 import { AboutComponent } from './components/artist/about/about.component';
 import { AboutCardComponent } from './components/artist/about/about-card/about-card.component';
+import { RelatedArtistsComponent } from './components/artist/related-artists/related-artists.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AboutCardComponent } from './components/artist/about/about-card/about-c
     AlbumCardComponent,
     ModalPlaylistComponent,
     AboutComponent,
-    AboutCardComponent
+    AboutCardComponent,
+    RelatedArtistsComponent
   ],
   imports: [
     BrowserModule,
