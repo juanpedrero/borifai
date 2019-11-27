@@ -30,6 +30,7 @@
     height: rem(58px);
     line-height: rem(58px);
     margin-bottom: rem(22px);
+    cursor: pointer;
 
     &:hover {
         background-color:rgba(24, 30, 40, 0.310377);
@@ -70,7 +71,7 @@
     line-height: rem(38px);
     height: rem(38px);
 
-    &::before{
+    &:hover::before{
         position: absolute;
         content: url(../../../../assets/SVG/Playing.svg);
         width: rem(14px);
