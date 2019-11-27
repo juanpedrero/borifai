@@ -13,6 +13,7 @@ import { PlayerComponent } from './components/player/player.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { AlbumListComponent } from './components/artist/album-list/album-list.component';
 import { SongListComponent } from './components/artist/song-list/song-list.component';
+import { ModalPlaylistComponent } from './components/sidenav/playlist/modal-playlist/modal-playlist.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SongListComponent } from './components/artist/song-list/song-list.compo
     PlayerComponent,
     ArtistComponent,
     AlbumListComponent,
-    SongListComponent
+    SongListComponent,
+    ModalPlaylistComponent
   ],
   imports: [
     BrowserModule,
