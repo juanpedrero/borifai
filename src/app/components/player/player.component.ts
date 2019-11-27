@@ -61,8 +61,12 @@ export class PlayerComponent implements OnInit {
       this.imgPlayPause.src = '../../../assets/svg/pause-solid.svg';
       this.btnPlay.dataset.playing = 'true';
       this.audioToPlay.ontimeupdate = () => {
-        this.timeBar.style.width = this.audioToPlay.currentTime / (this.audioToPlay.duration / 100) + '%';
+        this.timeBar.style.width = this.audioToPlay.currentTime / this.audioToPlay.duration * 100 + '%';
         return this.audioToPlay.currentTime;
+      }
+      this.audioToPlay.onended = () => {
+        this.imgPlayPause.src = '../../../assets/svg/play-solid.svg';
+        this.btnPlay.dataset.playing = 'false';
       }
     } else {
       this.audioToPlay.pause();
@@ -71,7 +75,7 @@ export class PlayerComponent implements OnInit {
     }
   }
 
-  switchVolume():void {
+  switchVolume(): void {
     if (this.btnVolume.dataset.sound === 'false') {
       this.formerVolume = this.audioToPlay.volume;
       this.audioToPlay.volume = 0;
@@ -85,13 +89,13 @@ export class PlayerComponent implements OnInit {
     this.volumeBar.style.width = this.audioToPlay.volume * 100 + '%';
   }
 
-  setVolume($event):void {
+  setVolume($event): void {
     this.audioToPlay.volume = parseFloat($event.target.value);
     this.volumeBar.style.width = parseFloat($event.target.value) * 100 + '%';
   }
 
-  setTime($event):void {
-    this.audioToPlay.currentTime = parseFloat($event.target.value) * Math.floor(this.audioToPlay.duration / 100);
+  setTime($event): void {
+    this.audioToPlay.currentTime = parseFloat($event.target.value) * (this.audioToPlay.duration / 100);
     this.timeBar.style.width = parseFloat($event.target.value) + '%';
   }
 }
