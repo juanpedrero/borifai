@@ -1,5 +1,5 @@
 <div class="album">
-    <img class="album__img" alt="Imagen album" [src]="albumes.image">
+    <img (click)="selectAlbum(albumes.id)" class="album__img" alt="Imagen album" [src]="albumes.image">
     <p class="album__name">{{albumes.name}}</p>
     <p class="album__year">{{albumes.year}}</p>
 </div>

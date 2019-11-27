@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
 import { MusicService } from 'src/app/services/music.service';
 
 
@@ -10,11 +10,15 @@ import { MusicService } from 'src/app/services/music.service';
 export class AlbumCardComponent implements OnInit {
   
   @Input() albumes: any
+  @Output() changeAlbum = new EventEmitter<any>();
   // FALTA CREAR MODELO DE ALBUMES
 
   constructor(private musicService: MusicService) { }
 
   ngOnInit() {
+  }
+  selectAlbum(idAlbum) {
+    this.changeAlbum.emit(idAlbum);
   }
 
 }
