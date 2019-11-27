@@ -249,7 +249,7 @@ export class MusicService {
     return myArtist.name;
   }
 
-// -- Funcion para buscar imagen del disco --- 
+// -- Funcion para buscar imagen del disco ---
   getAlbumImgById(id) {
     const myAlbum = this.albums.find((album) => {
       return album.id === id
@@ -257,7 +257,7 @@ export class MusicService {
     return myAlbum.image;
   }
 
-// 
+//
 getAlbumList(artista) {
   const idArtist = artista.id
   //filter

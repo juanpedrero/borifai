@@ -1,0 +1,48 @@
+<div class="player">
+  <div class="song-info">
+    <img class="song-info__media" src="../../../assets/images/cover_Queen_01.jpg" alt="Album name">
+    <div class="song-info__text-group">
+      <p class="song-info__name">Song name</p>
+      <p class="song-info__author">Author name</p>
+    </div>
+  </div>
+  <div class="controls">
+    <audio>
+      <source src="../../../assets/music/queen/BohemianRhapsody.mp3" type="audio/mp3"
+        preload="auto">
+      Your browser does not support the audio!
+    </audio>
+    <div class="controls__group">
+      <button type="button" id="controlShuffle" class="controls__btn"><img src="../../../assets/svg/random-solid.svg"
+          alt="Shuffle"></button>
+      <button type="button" id="controlPrevious" class="controls__btn" (click)="controlPrevious()"><img
+          src="../../../assets/svg/step-backward-solid.svg" alt="Previous song"></button>
+      <button type="button" id="controlPlay" class="controls__btn controls__btn--rounded" data-playing="false"
+        role="switch" aria-checked="false" (click)="controlPlay()"><img src="../../../assets/svg/play-solid.svg"
+          id="imgPlayPause" alt="Play song"></button>
+      <button type="button" id="controlNext" class="controls__btn" (click)="controlNext()"><img src="../../../assets/svg/step-forward-solid.svg"
+          alt="Next song"></button>
+      <button type="button" id="controlRepeat" class="controls__btn"><img src="../../../assets/svg/sync-alt-solid.svg"
+          alt="Repeat"></button>
+    </div>
+    <div class="controls__volume-group">
+      <button id="controlVolume" class="controls__btn" data-sound="false" role="switch" aria-checked="false"
+        (click)="switchVolume()"><img src="../../../assets/svg/volume-up-solid.svg" id="imgVolume"
+          alt="volume"></button>
+      <div class="controls__progress controls__progress--guide">
+        <div id="volumeBar" class="controls__progress controls__progress--fill"></div>
+        <input type="range" id="volumeBarHidden" class="controls__progress controls__progress--hidden" min="0" max="1"
+          value="1" step="0.01" (input)="setVolume($event)">
+      </div>
+    </div>
+    <div class="controls__time-group">
+      <span class="controls__actual-time">{{ this.audioToPlay.currentTime | songTime }}</span>
+      <div class="controls__progress controls__progress--lg controls__progress--guide">
+        <div id="timeBar" class="controls__progress controls__progress--fill"></div>
+        <input type="range" id="timeBarHidden" class="controls__progress controls__progress--lg controls__progress--hidden controls__progress--hidden-lg" min="0" max="100"
+          value="0" step="0.1" (change)="setTime($event)">
+      </div>
+      <span class="controls__total-time">{{ this.totalTime | songTime }}</span>
+    </div>
+    <button id="toggleList" class="controls__btn"><img src="../../../assets/svg/queue-show.svg" alt="queue"></button>
+  </div>

@@ -13,7 +13,9 @@ import { PlayerComponent } from './components/player/player.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { AlbumListComponent } from './components/artist/album-list/album-list.component';
 import { SongListComponent } from './components/artist/song-list/song-list.component';
+import { SongTimePipe } from './components/player/pipes/song-time.pipe';
 import { AlbumCardComponent } from './components/artist/album-card/album-card.component';
+import { ModalPlaylistComponent } from './components/sidenav/playlist/modal-playlist/modal-playlist.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { AlbumCardComponent } from './components/artist/album-card/album-card.co
     ArtistComponent,
     AlbumListComponent,
     SongListComponent,
-    AlbumCardComponent
+    SongTimePipe,
+    AlbumCardComponent,
+    ModalPlaylistComponent
   ],
   imports: [
     BrowserModule,

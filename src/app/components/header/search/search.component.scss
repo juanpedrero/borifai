@@ -1,0 +1,36 @@
+@import "../../../../scss/partials/rem";
+@import "../../../../scss/partials/variables";
+
+
+.form {   
+    position: relative;
+    margin-left: rem(27px);
+
+    &::before {
+        position: absolute;
+        width: rem(13.4px);
+        height: rem(13.22px);
+        content: url(../../../../assets/svg/find.png);
+        left: rem(-30px);
+        top: rem(4px);
+    }
+
+    &__text {
+        background: transparent;
+        outline: none;
+        border: none;
+        color: $white; 
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;         
+
+        &::placeholder{
+            color:$white;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 20px;
+        } 
+    }    
+}

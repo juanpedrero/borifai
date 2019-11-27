@@ -12,6 +12,10 @@
   }
 
   &__avatar {
+    width: rem(34px);
+    height: rem(34px);
     margin-left: rem(13px);
+    border-radius: 50%;
+    cursor: pointer;
   }
 }
