@@ -260,7 +260,7 @@ export class MusicService {
 // 
 getAlbumList(artista) {
   const idArtist = artista.id
-  filter
+  //filter
 }
 
 
