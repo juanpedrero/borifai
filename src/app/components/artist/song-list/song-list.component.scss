@@ -34,11 +34,12 @@
     &:hover {
         background-color:rgba(24, 30, 40, 0.310377);
         border-radius: rem(4px);
+        cursor: pointer;
     }
 
     &:hover::after{
         position: absolute;
-        content: url(../../../../assets/SVG/Add.svg);
+        content: url(../../../../assets/svg/Add.svg);
         width: rem(14px);
         height: rem(14px);
         top: 0;
@@ -72,7 +73,7 @@
 
     &::before{
         position: absolute;
-        content: url(../../../../assets/SVG/Playing.svg);
+        content: url(../../../../assets/svg/Playing.svg);
         width: rem(14px);
         height: rem(14px);
         top: 4px;

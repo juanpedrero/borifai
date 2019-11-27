@@ -2,12 +2,22 @@
 @import "../../../../scss/partials/variables";
 
 .playlist {
+  position: relative;
   display: flex;
   flex-direction: column;
-  margin: rem(51px 35px);
+  padding: rem(51px 35px);
+  
+  &::after {
+    position: absolute;
+    content: url(../../../../assets/svg/add.svg);
+    height: rem(22.77px);
+    width: rem(13.93px);
+    right: rem(25px);
+    cursor: pointer;
+  }
 
-  &__heading {
-    margin-bottom: rem(22px);
+  &__heading {    
+    padding-bottom: rem(22px);
     font-size: rem(13px);
     font-weight: 700;
     text-transform: uppercase;
