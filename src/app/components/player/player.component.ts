@@ -12,16 +12,22 @@ export class PlayerComponent implements OnInit {
 
   // Buttons
   private btnPlay: HTMLElement;
-  private imgPlayPause: HTMLMediaElement;
   private btnPrevious: HTMLElement;
   private btnNext: HTMLElement;
   private btnShuffle: HTMLElement;
   private btnRepeat: HTMLElement;
   private btnVolume: HTMLElement;
 
+  // Icons
+  private imgPlayPause: HTMLMediaElement;
+  private imgVolume: HTMLMediaElement;
+  private iconPlay: string;
+  private iconPause: string;
+  private iconVolumeUp: string;
+  private iconMute: string;
+
   // Volume
   private formerVolume: number;
-  private imgVolume: HTMLMediaElement;
   private volumeBar: HTMLElement;
 
   // Duration
@@ -35,15 +41,22 @@ export class PlayerComponent implements OnInit {
   ngOnInit() {
     this.audioToPlay = document.querySelector('audio');
     this.audioContext = new AudioContext();
+
     this.btnPlay = document.getElementById('controlPlay');
-    this.imgPlayPause = document.querySelector('#imgPlayPause');
     this.btnPrevious = document.getElementById('controlPrevious');
     this.btnNext = document.getElementById('controlNext');
     this.btnShuffle = document.getElementById('controlShuffle');
     this.btnRepeat = document.getElementById('controlRepeat');
     this.btnVolume = document.getElementById('controlVolume');
-    this.formerVolume = 1;
+
+    this.imgPlayPause = document.querySelector('#imgPlayPause');
     this.imgVolume = document.querySelector('#imgVolume');
+    this.iconPlay = '../../../assets/svg/play-solid.svg';
+    this.iconPause = '../../../assets/svg/pause-solid.svg';
+    this.iconVolumeUp = '../../../assets/svg/volume-up-solid.svg';
+    this.iconMute = '../../../assets/svg/volume-mute-solid.svg';
+
+    this.formerVolume = 1;
     this.volumeBar = document.getElementById('volumeBar');
     this.volumeBar.style.width = this.audioToPlay.volume * 100 + '%';
     this.timeBar = document.getElementById('timeBar');
@@ -58,19 +71,19 @@ export class PlayerComponent implements OnInit {
     }
     if (this.btnPlay.dataset.playing === 'false') {
       this.audioToPlay.play();
-      this.imgPlayPause.src = '../../../assets/svg/pause-solid.svg';
+      this.imgPlayPause.src = this.iconPause;
       this.btnPlay.dataset.playing = 'true';
       this.audioToPlay.ontimeupdate = () => {
         this.timeBar.style.width = this.audioToPlay.currentTime / this.audioToPlay.duration * 100 + '%';
         return this.audioToPlay.currentTime;
       }
       this.audioToPlay.onended = () => {
-        this.imgPlayPause.src = '../../../assets/svg/play-solid.svg';
+        this.imgPlayPause.src = this.iconPlay;
         this.btnPlay.dataset.playing = 'false';
       }
     } else {
       this.audioToPlay.pause();
-      this.imgPlayPause.src = '../../../assets/svg/play-solid.svg';
+      this.imgPlayPause.src = this.iconPlay;
       this.btnPlay.dataset.playing = 'false';
     }
   }
@@ -79,11 +92,11 @@ export class PlayerComponent implements OnInit {
     if (this.btnVolume.dataset.sound === 'false') {
       this.formerVolume = this.audioToPlay.volume;
       this.audioToPlay.volume = 0;
-      this.imgVolume.src = '../../../assets/svg/volume-mute-solid.svg';
+      this.imgVolume.src = this.iconMute;
       this.btnVolume.dataset.sound = 'true';
     } else {
       this.audioToPlay.volume = this.formerVolume;
-      this.imgVolume.src = '../../../assets/svg/volume-up-solid.svg';
+      this.imgVolume.src = this.iconVolumeUp;
       this.btnVolume.dataset.sound = 'false';
     }
     this.volumeBar.style.width = this.audioToPlay.volume * 100 + '%';
