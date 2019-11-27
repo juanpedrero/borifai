@@ -8,3 +8,23 @@
     width: rem(570px);
     
 }
+
+.tab__menu {
+    height: rem(33px);
+    height: rem(33px);
+    margin-bottom:rem(30px);
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: normal;
+    line-height: rem(20px);
+
+    &-item{
+      padding-bottom: rem(33px);
+      height: rem(33px);
+      border-bottom:  1px solid #3191FB;
+
+      & + & {
+        margin-left: rem(45px);
+      }
+    }
+  }

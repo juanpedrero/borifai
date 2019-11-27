@@ -48,10 +48,14 @@
     &-item{
       padding-bottom: rem(33px);
       height: rem(33px);
-      border-bottom:  1px solid #3191FB;
+      &-activated {
+        border-bottom:  1px solid #3191FB;
+      }
 
       & + & {
         margin-left: rem(45px);
       }
     }
   }
+
+  
