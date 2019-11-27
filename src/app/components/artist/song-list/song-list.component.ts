@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MusicService } from 'src/app/services/music.service';
+
 
 @Component({
   selector: 'app-song-list',
