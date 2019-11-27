@@ -1,4 +1,4 @@
 <div class="album-container">
-    <app-album-card *ngFor="let album of albumList" [albumes]="album">
+    <app-album-card (changeAlbum)="changeAlbumSelected($event)" *ngFor="let album of albumList" [albumes]="album">
     </app-album-card>
 </div>
