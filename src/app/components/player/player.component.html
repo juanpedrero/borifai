@@ -39,7 +39,7 @@
       <span class="controls__actual-time">{{ this.audioToPlay.currentTime | songTime }}</span>
       <div class="controls__progress controls__progress--lg controls__progress--guide">
         <div id="timeBar" class="controls__progress controls__progress--fill"></div>
-        <input type="range" id="timeBarHidden" class="controls__progress controls__progress--lg controls__progress--hidden-lg" min="0" max="100"
+        <input type="range" id="timeBarHidden" class="controls__progress controls__progress--lg controls__progress--hidden controls__progress--hidden-lg" min="0" max="100"
           value="0" step="0.1" (change)="setTime($event)">
       </div>
       <span class="controls__total-time">{{ this.totalTime | songTime }}</span>

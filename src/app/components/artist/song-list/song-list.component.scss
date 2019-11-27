@@ -1,0 +1,81 @@
+@import "../../../../scss/partials/rem";
+@import "../../../../scss/partials/variables";
+
+
+
+.container {
+    width: rem(442px);
+}
+
+.list{
+    width: rem(375px);
+
+    &__title {
+        display: flex;
+        margin-bottom: rem(20.33px);
+        padding: rem(10px 44px 10px 23px);
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        color: $white;
+    }
+}
+
+.list__item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: rem(10px 44px 10px 23px);
+    height: rem(58px);
+    line-height: rem(58px);
+    margin-bottom: rem(22px);
+
+    &:hover {
+        background-color:rgba(24, 30, 40, 0.310377);
+        border-radius: rem(4px);
+    }
+
+    &:hover::after{
+        position: absolute;
+        content: url(../../../../assets/SVG/Add.svg);
+        width: rem(14px);
+        height: rem(14px);
+        top: 0;
+        right: 20px;
+    }
+}
+
+.item__data {
+    &--song{
+        font-style: normal;
+        font-weight: bold;
+        font-size: rem(14px);
+        line-height: rem(20px);
+    }
+
+    &--album {
+        font-style: normal;
+        font-weight: normal;
+        font-size: rem(13px);
+        line-height: rem(19px);
+    }
+}
+
+.item__time {
+    position: relative; 
+    font-style: normal;
+    font-weight: normal;
+    font-size: rem(13px);
+    line-height: rem(38px);
+    height: rem(38px);
+
+    &::before{
+        position: absolute;
+        content: url(../../../../assets/SVG/Playing.svg);
+        width: rem(14px);
+        height: rem(14px);
+        top: 4px;
+        right: 70px;
+    }
+}

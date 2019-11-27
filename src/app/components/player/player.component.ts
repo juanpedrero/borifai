@@ -60,6 +60,10 @@ export class PlayerComponent implements OnInit {
       this.audioToPlay.play();
       this.imgPlayPause.src = '../../../assets/svg/pause-solid.svg';
       this.btnPlay.dataset.playing = 'true';
+      this.audioToPlay.ontimeupdate = () => {
+        this.timeBar.style.width = this.audioToPlay.currentTime / (this.audioToPlay.duration / 100) + '%';
+        return this.audioToPlay.currentTime;
+      }
     } else {
       this.audioToPlay.pause();
       this.imgPlayPause.src = '../../../assets/svg/play-solid.svg';

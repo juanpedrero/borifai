@@ -8,26 +8,50 @@
   justify-content: space-between;
   margin: rem(6px 32px 0 78px);
 
+
   &__btn {
+    position: relative;
     margin-top: rem(104px);
     height: rem(34px);
     border: 1px solid $white;
     border-radius: rem(17px);
     padding: rem(0 30px);
     font-size: rem(14px);
-  }
-
-
-  &__name {
-    font-size: rem(90px);
-    font-weight: 700;
-  }
-
-  &__tab {
-    font-size: rem(14px);
-
-    & + & {
-      margin-left: rem(45px);
+    
+    &::before {
+      position: absolute;
+      content: url(../../../assets/SVG/ic_stars.png);
+      height: rem(22.77px);
+      width: rem(13.93px);
+      top: 11px;
+      left: 9px;
     }
   }
+
+  &__name {   
+    height: rem(128px);
+    font-size: rem(90px);
+    font-weight: 700;
+    line-height: rem(128px); 
+  }
 }
+
+  .tab__menu {
+    height: rem(33px);
+    height: rem(33px);
+    margin-bottom:rem(30px);
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: normal;
+    line-height: rem(20px);
+
+    &-item{
+      padding-bottom: rem(33px);
+      height: rem(33px);
+      border-bottom:  1px solid #3191FB;
+
+      & + & {
+        margin-left: rem(45px);
+      }
+    }
+  }
