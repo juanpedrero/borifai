@@ -13,6 +13,7 @@
 .song-info {
   display: flex;
   align-items: center;
+  width: rem(220px);
 
   &__media {
     width: rem(40px);
@@ -38,20 +39,19 @@
 .controls {
   display: flex;
   justify-content: space-between;
+  flex-grow: 1;
   font-size: rem(12px);
 
   &__group {
-    margin-right: rem(44px);
 
     * + * {
-      margin-left: rem(21px);
+      margin-left: rem(10px);
     }
   }
 
   &__volume-group {
     display: flex;
     align-items: center;
-    margin-right: rem(35px);
 
     * + * {
       margin-left: rem(10px);
@@ -61,7 +61,6 @@
   &__time-group {
     display: flex;
     align-items: center;
-    margin-right: rem(25px);
 
     * + * {
       margin-left: rem(16px);
@@ -91,6 +90,10 @@
 
     &--lg {
       width: rem(630px);
+
+      @media (min-width: 700px) {
+        width: rem(630px);
+      }
     }
 
     &--guide {
